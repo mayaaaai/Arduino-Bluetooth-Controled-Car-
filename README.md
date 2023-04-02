@@ -33,9 +33,9 @@ Pentru a executa viraje, masinuta noastra se aseamana mai mult cu un tank deoare
 2.	Etapa de asamblare
 In aceasta etapa vom asambla sasiu si vom lipi coomponentele pe masinuta. Piesele pe care le vom folosi:
 
-      ![image](https://user-images.githubusercontent.com/102360393/229363361-68f77653-ff9c-4c1c-a6c9-79c1b2e9153e.png)
-      ![image](https://user-images.githubusercontent.com/102360393/229363367-b77028e9-01d8-4091-a2a9-02e5e6bfedcc.png)
-      ![image](https://user-images.githubusercontent.com/102360393/229363376-6101f076-e292-422e-aef6-833cbe1ff01d.png)
+   ![image](https://user-images.githubusercontent.com/102360393/229363361-68f77653-ff9c-4c1c-a6c9-79c1b2e9153e.png)
+   ![image](https://user-images.githubusercontent.com/102360393/229363367-b77028e9-01d8-4091-a2a9-02e5e6bfedcc.png)
+   ![image](https://user-images.githubusercontent.com/102360393/229363376-6101f076-e292-422e-aef6-833cbe1ff01d.png)
 
      
                               Suport baterii, Modul Bridge si Placuta Arduino
@@ -53,7 +53,7 @@ In aceasta etapa vom asambla sasiu si vom lipi coomponentele pe masinuta. Piesel
    Dupa atasarea firelor vom monta motoarele pe sasiu folosind suruburile din kit.
    
    
-      ![image](https://user-images.githubusercontent.com/102360393/229363433-087bcbbc-1e1b-4c64-89c4-186bd6cdfaa0.png)
+   ![image](https://user-images.githubusercontent.com/102360393/229363433-087bcbbc-1e1b-4c64-89c4-186bd6cdfaa0.png)
 
     
    Dupa montarea motoarelor, vom lipi cu niste banda izolatoare modulul H-Bridge de sasiu. La fel vom face si cu suportul de bateri si cu placuta Arduino.
@@ -72,7 +72,7 @@ In aceasta etapa vom asambla sasiu si vom lipi coomponentele pe masinuta. Piesel
   ![image](https://user-images.githubusercontent.com/102360393/229363552-1ecb9180-925f-426e-999a-bd1621263e37.png)
 
   
-    Am construit pe o placuta breadboard divizorul de tensiune folosindu-ne de cele 3 rezistente de 1k Ω si niste fire conectoare.
+   Am construit pe o placuta breadboard divizorul de tensiune folosindu-ne de cele 3 rezistente de 1k Ω si niste fire conectoare.
  ![image](https://user-images.githubusercontent.com/102360393/229363575-15d0578d-9d02-4dff-98e0-cfd1f4991872.png)
 
  
@@ -94,10 +94,10 @@ II.	 PARTEA SOFTWARE
     In programul Arduino IDE vom coda in C++, folosindu-ne si de functile specifice arduinoIDE “digitalWrite”, “Serial.print()”, “Serial.begin()”, “pinMode”. Pentru a intelege codul urmarim schema logica a programului.  
     
     
-    ![image](https://user-images.githubusercontent.com/102360393/229363733-5bf2e727-49fb-433a-8c62-dfb9ea383b01.png)
+  ![image](https://user-images.githubusercontent.com/102360393/229363733-5bf2e727-49fb-433a-8c62-dfb9ea383b01.png)
 
     
-    In Arduino avem doua functii marii: void setup() si void loop(). In functia void setup definim parametrii de functionare(pini,serial,valori etc). Functia void setup ruleaza o singura data, atunci cand alimentam placa arduino. Functia void loop este o functie care se repeta pe tot parcursul alimentari placii si se folosese pentru actiuni care se schimba pe parcursul functionarii robotului.
+   In Arduino avem doua functii marii: void setup() si void loop(). In functia void setup definim parametrii de functionare(pini,serial,valori etc). Functia void setup ruleaza o singura data, atunci cand alimentam placa arduino. Functia void loop este o functie care se repeta pe tot parcursul alimentari placii si se folosese pentru actiuni care se schimba pe parcursul functionarii robotului.
  Inainte de functia void setup() am definit o variabila x de tip int si i-am dat valoarea 0.
  In functia void setup() am pornit functia serial de comunicare folosind comanda Serial.begin si I-am dat valoarea baud rate de 38400 (biti pe secunda) care este aceeasi valoare de comunicare cu cea a modulului bluetooth. Astfel am asigurat o comunicare intre acestia la acelasi baud rate, deci nu o sa avem probleme de interpretare a semnalului. Folosindu-ne de functia pinMode am definit pinii digitali care vor controla modulul H-Bridge. 
  In functia void loop() am dat o functie if care are rolul de a verifica daca avem comunicare de tip serial, adica modulul bluetooth este conectat. Daca avem comunicare seriala, programul va interpreta cu ajutorul functie Serial.read() valoarea lui x(variabila de tip int). Folosindu-ne de o serie de functii if care au rolul de a verifica daca x are valoarea un numar de la 1 la 5. Pentru fiecare valoare de la 1 la 5 a lui x, atribuim o comanda. De exemplu if(x ==  1) robotul va intelege sa execute seria de comenzi digitalWrite necesare miscarii in fata. In functile if mai intalnim pe langa digitalWrite(care au rol in controlul motoarelor) si functia Serial.print() care are rolul de a returna o valoare string la smartphone care sa confirme directia dorita. Dupa cum spuneam, functia void loop() se repeta in continuu, deci cata vreme valoarea lui x nu se schimba, masinuta va executa o singura miscare(FATA, SPATE, STANGA, DREAPTA, STOP).
