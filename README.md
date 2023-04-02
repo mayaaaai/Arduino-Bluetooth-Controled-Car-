@@ -1,10 +1,10 @@
-# Arduino-Bluetooth-Controled-Car
-Arduino Bluetooth Controled Car - Team Project ( Physics - 1st year, semester I)
+# Arduino-Bluetooth-Controlled-Car
+Arduino Bluetooth Controlled Car - Team Project ( Physics - 1st year, semester I)
 
 
 
 Proiect Fizica
-Arduino Bluetooth Controled Car
+Arduino Bluetooth Controlled Car
 By Oana Laza & Maia Incer
 
  In acest proiect avem urmatoarea cerinta: crearea unei masinute controlate prin bluetooth cu ajutorul placutei de dezvoltare Arduino. Pentru a indeplini aceasta cerinta vom face si partea HARDWARE si partea SOFTWARE.
