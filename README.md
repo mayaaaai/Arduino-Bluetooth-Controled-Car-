@@ -48,7 +48,7 @@ In aceasta etapa vom asambla sasiu si vom lipi coomponentele pe masinuta. Piesel
                                 Motor DC, modul Bluetooth, Acumulator NiMh
                                 
                                 
-  Motoarele DC nu au fire atasate la conectori asa ca vom folosi un ciocan de lipit cu niste cositor pentru a le suda.
+   Motoarele DC nu au fire atasate la conectori asa ca vom folosi un ciocan de lipit cu niste cositor pentru a le suda.
   
    Dupa atasarea firelor vom monta motoarele pe sasiu folosind suruburile din kit.
    
